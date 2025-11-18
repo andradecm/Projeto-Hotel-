@@ -89,6 +89,30 @@ header {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     padding: 1.2rem 1rem;
+    opacity: 0;
+    transform: translateY(-15px);
+    z-index: 999;
+}
+
+#mobileMenu li {
+    width: 100%;
+    border-bottom: 1px solid #d5d5db;
+    padding: 0.6rem 0;
+}
+
+#mobileMenu li:last-child {
+    border-bottom: none;
+}
+
+#mobileMenu a::after {
+    border-bottom: none !important;
+    transform: translateX(4px);
+}
+
+#mobileMenu a {
+    display: block;
+    transition: 0.25s ease;
+    text-decoration: none;
 }
 
 /*Quando o JS ativar*/
@@ -127,6 +151,73 @@ header {
     font-size: 1.2rem;
     padding-left: 0.5rem;
     cursor: pointer;
+}
+
+.about-section {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+    ),
+    url('../img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-block: 6rem;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-column .about-card {
+    aspect-ratio: 16 / 9;
+    /*aspect-ratio
+    1 / 1: quadrado perfeito
+    4 / 3: fotografia antiga
+    16 / 9: widescreen
+    3 / 2: fotografia
+    21 / 9: ultra widescreen
+    */
+}
+
+.about-grid {
+    display: flex;
+    gap: 1rem;
+}
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.about-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: ease 0.3s;
+}
+
+.about-card img:hover {
+    transform: scale(1.05);
+}
+
+
+.about-card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-grid .about-column:nth-child(2) {
+    transform: translateY(3rem);
 }
 
 /* ===== CAIXA DE SELEÇÃO ===== */
@@ -268,7 +359,6 @@ header {
     bottom: 0;
     left: 0;
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 5;
@@ -292,19 +382,40 @@ header {
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    padding: 0.7rem;
-    padding-right: 1rem;
+    padding-bottom: 0.5rem; 
+    padding-right: 0.7rem;
     border-bottom: 2px solid var(--secondary-color);
-    color: var(--extra-light);
-    border-radius: 0 0 10px 10px;
+    color: var(--secondary-color);
+    border-radius: 0 0  10px 10px;
     cursor: pointer;
 }
 
 .input-box ion-icon {
     font-size: 1.3rem;
-    /*margin-left: 0.7rem;*/
+    margin-left: 0.7rem;
 }
 
+.input-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-size: 1rem;
+    width: 160px;
+}
+
+.input-box select {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--white);
+    width: 120px;
+}
+
+.input-box select option {
+    color: var(--text-dark);
+}
 /* Equipe */
 .equipe {
     padding: 80px 20px;
