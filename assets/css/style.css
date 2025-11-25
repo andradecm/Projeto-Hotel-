@@ -699,6 +699,23 @@ header {
     .input-box select {
         width: 100%;
     }
+
+    .reserva .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /*SOBRE*/
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .about-content {
+        text-align: center;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -718,6 +735,41 @@ header {
 
     .hero_container h1 {
         font-size: 2.2rem;
+    }
+
+    /*RESERVA*/
+    .reserva {
+        bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .reserva_container {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    /*SOBRE*/
+    .about-grid {
+        flex-direction: column;
+    }
+
+    .about-column {
+        width: 100%;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .about-grid .about-column:nth-child(2) {
+        transform: none;
+    }
+
+    .cards-equipe {
+        gap: 30px;
+    }
+
+    .card {
+        flex: 1 1 100%;
     }
 }
 
